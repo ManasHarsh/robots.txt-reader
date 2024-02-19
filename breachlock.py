@@ -2,8 +2,7 @@ import requests
 
 def fetch_robots_txt(url):
     try:    
-        robots_url = "https://" + url.rstrip("/") + "/robots.txt"
-        #print(robots_url)                
+        robots_url = "https://" + url.rstrip("/") + "/robots.txt"               
         response = requests.get(robots_url)
         
         if response.status_code == 200:
