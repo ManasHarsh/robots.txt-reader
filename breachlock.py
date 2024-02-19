@@ -2,8 +2,8 @@ import requests
 
 def fetch_robots_txt(url):
     try:    
-        robots_url = url.rstrip("/") + "/robots.txt"
-                
+        robots_url = "https://" + url.rstrip("/") + "/robots.txt"
+        #print(robots_url)                
         response = requests.get(robots_url)
         
         if response.status_code == 200:
@@ -14,7 +14,7 @@ def fetch_robots_txt(url):
         return f"An error occurred: {str(e)}"
 
 if __name__ == "__main__":
-    website_url = input("Enter the website URL: ")
+    website_url = input("Enter the website domain: ")
     robots_content = fetch_robots_txt(website_url)
     print("\nContents of robots.txt file:")
     print(robots_content)
